@@ -1,0 +1,40 @@
+// colors
+$primary: #51e898;
+$primary-dark: #19b361;
+$secondary: #eb5a46;
+$light: #f6fefa;
+$dark: #040c08;
+
+// fonts
+$title-large: 4rem;
+$title-medium: 3rem;
+$title: 2.5rem;
+$subtitle: 1.5rem;
+$body: 1rem;
+$helper: 0.825rem;
+
+// Grid
+$gap: 20px;
+$columns: 12;
+
+$breakpoint-xsm: 480px;
+$breakpoint-sm: 568px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 960px;
+$breakpoint-xlg: 1200px;
+
+$breakpoints: (
+    "xsm": $breakpoint-xsm,
+    "sm": $breakpoint-sm,
+    "md": $breakpoint-md,
+    "lg": $breakpoint-lg,
+    "xlg": $breakpoint-xlg,
+);
+
+$container-sizes: (
+    xsm: 460px,
+    sm: 540px,
+    md: 720px,
+    lg: 928px,
+    xlg: 992px,
+);

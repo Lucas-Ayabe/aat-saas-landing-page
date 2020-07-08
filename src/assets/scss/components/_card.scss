@@ -1,0 +1,18 @@
+.c-card {
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(4, 12, 8, 0.3);
+
+    &__body {
+        padding: 2em 1em;
+    }
+
+    &__icon + * {
+        margin-top: 0.5em;
+    }
+
+    &__text {
+        font-size: $body;
+        margin-top: 1em;
+    }
+}

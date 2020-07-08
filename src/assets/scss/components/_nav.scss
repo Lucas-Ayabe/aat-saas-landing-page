@@ -1,0 +1,32 @@
+.c-nav {
+    display: flex;
+    align-items: center;
+
+    &__menu {
+        display: flex;
+        align-items: center;
+        list-style: none;
+    }
+
+    &__item + &__item {
+        margin-top: 1em;
+    }
+
+    &__link {
+        color: var(--dark);
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            color: var(--secondary);
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        &__item + &__item {
+            margin-top: 0;
+            margin-left: 1em;
+        }
+    }
+}

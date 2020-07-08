@@ -1,0 +1,11 @@
+///
+///  min-width
+///  Mixin to include a min-width breakpoint.
+///
+///  @param  $breakpoint the length value.
+///
+@mixin min-width($breakpoint) {
+    @media screen and (min-width: $breakpoint) {
+        @content;
+    }
+}

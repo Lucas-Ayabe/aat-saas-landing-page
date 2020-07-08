@@ -1,0 +1,44 @@
+///
+///  getBreakpoint
+///  Gets one breakpoint in the $breakpoints array in _vars.scss.
+///
+///  @param $key  the name of the breakpoint requisited.
+///  @return      the requested breakpoint value.
+///
+@function getBreakpoint($key) {
+    @return map-get($map: $breakpoints, $key: $key);
+}
+
+///
+///  getRgba
+///  Returns the rgba value to a any given color.
+///
+///  @param $color  the color.
+///  @param $alpha  the alpha value.
+///  @return        the rgba color.
+///
+@function getRgba($color, $alpha) {
+    @return rgba(red($color), green($color), blue($color), $alpha);
+}
+
+///
+///  getContrastYIQ
+///  Returns the black or the white color based on a given color.
+///
+///  @param $color  the color.
+///  @return        the best color to place in the given color, based on the
+///                 contrast ratio.
+///
+@function getContrastYIQ($color) {
+    $red: red($color);
+    $green: green($color);
+    $blue: blue($color);
+
+    $yiq: (($red * 299) + ($green * 587) + ($blue * 114)) / 1000;
+
+    @if ($yiq >= 128) {
+        @return $black;
+    } @else {
+        @return $white;
+    }
+}

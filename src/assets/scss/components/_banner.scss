@@ -1,0 +1,52 @@
+.c-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    &__content {
+        width: 100%;
+    }
+
+    &__title {
+        text-align: center;
+        font-weight: 500;
+        font-size: $title;
+        max-width: 350px;
+        line-height: 1.2;
+
+        @media screen and (min-width: 568px) {
+            font-size: $title-medium;
+        }
+
+        @media screen and (min-width: 1084px) {
+            text-align: left;
+            font-size: $title-large;
+            max-width: 450px;
+        }
+    }
+
+    &.-bi-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: stretch;
+
+        @media screen and (min-width: 768px) {
+            flex-direction: row;
+        }
+    }
+
+    &.-bi-content &__content {
+        flex: 1 1 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+
+        @media screen and (min-width: 768px) {
+            padding: 0;
+        }
+    }
+}

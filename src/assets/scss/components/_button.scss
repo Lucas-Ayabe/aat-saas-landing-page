@@ -1,0 +1,42 @@
+.c-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: inherit;
+    cursor: pointer;
+    background: transparent;
+    font-size: $body;
+    padding: 0.9em 1em;
+    border: 0 solid transparent;
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 5px 10px rgba(4, 12, 8, 0.3);
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        box-shadow: 0 4px 8px rgba(4, 12, 8, 0.25);
+    }
+
+    &:active {
+        outline: none;
+        box-shadow: 0 2px 4px rgba(4, 12, 8, 0.2);
+    }
+
+    &:focus {
+        outline: 1px solid $primary;
+    }
+
+    &.-small {
+        padding: 0.5em 1em;
+    }
+
+    &.-white {
+        background: #ffffff;
+    }
+
+    &.-primary {
+        background: $primary;
+        color: #fff;
+    }
+}

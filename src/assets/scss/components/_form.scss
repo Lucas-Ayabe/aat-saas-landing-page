@@ -1,0 +1,9 @@
+.c-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__button {
+        margin-top: 2em;
+    }
+}

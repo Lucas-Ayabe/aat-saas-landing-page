@@ -1,0 +1,134 @@
+/**
+ * The grid is a object that serve to wrapper a content and control the 
+ * positioning of the content through a cells. 
+ * The grid can be used in many ways:
+ * - with gaps(default).
+ * - without gaps(.-no-gaps).
+ * - control the alignment:
+ *   - left(.-left)
+ *   - center(.-center)
+ *   - right(.-right)
+ *   - around(.-around)
+ *   - evenly(.-evenly)
+ *   - between(.-between)
+ * 
+ * The cells can be used in many ways:
+ * - alone, without any modifier.
+ * - with number modifiers, that indicates the number of cells occupied. Ex:
+ *   <div class="grid__cell--2"></div>
+ * - with @breakpoint modifier. Ex: <div class="grid__cell@sm"></div>
+ * - with @breakpoint and number modifiers simultaneously. Ex:
+ *   <div class="grid__cell @sm--4"></div>
+ * - with many @breakpoint and number modifiers simultaneously. Ex:
+ *   <div class="grid__cell @sm--4 @md--6"></div> 
+ * 
+ * Breakpoints explained in _vars.scss file.
+ */
+.o-grid {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    margin: (($gap / 2) * -1);
+
+    &.-left {
+        justify-content: flex-start;
+    }
+    &.-center {
+        justify-content: center;
+    }
+    &.-right {
+        justify-content: flex-end;
+    }
+    &.-around {
+        justify-content: space-around;
+    }
+    &.-evenly {
+        justify-content: space-evenly;
+    }
+    &.-between {
+        justify-content: space-between;
+    }
+
+    &.-no-gaps {
+        margin: 0;
+
+        & > .o-grid__cell {
+            @extend %no-gap;
+        }
+
+        @for $column from 1 to $columns + 1 {
+            & > .o-grid__cell--#{$column} {
+                @extend %no-gap;
+            }
+        }
+
+        @each $breakpoint, $value in $breakpoints {
+            & > .o-grid__cell\@#{$breakpoint} {
+                @extend %no-gap;
+            }
+        }
+    }
+}
+
+%grid__cell {
+    flex: 1;
+    padding: $gap / 2;
+}
+
+.o-grid__cell {
+    @extend %grid__cell;
+}
+
+%cell {
+    flex: 0 0 100%;
+    padding: $gap / 2;
+}
+
+@for $column from 1 to $columns + 1 {
+    .o-grid__cell--#{$column},
+    .o-grid__cell.\@--#{$column} {
+        @extend %grid__cell;
+        flex: 0 0 ((100% / $columns) * $column);
+    }
+}
+
+@each $breakpoint, $value in $breakpoints {
+    .o-grid__cell\@#{$breakpoint} {
+        @extend %cell;
+    }
+}
+
+@each $breakpoint, $value in $breakpoints {
+    @include min-width(getBreakpoint($breakpoint)) {
+        .o-grid__cell\@#{$breakpoint} {
+            flex: 1;
+        }
+    }
+}
+
+@each $breakpoint, $value in $breakpoints {
+    @for $column from 1 to $columns + 1 {
+        .o-grid__cell.\@#{$breakpoint}--#{$column} {
+            @extend %cell;
+        }
+    }
+}
+
+@each $breakpoint, $value in $breakpoints {
+    @include min-width(getBreakpoint($breakpoint)) {
+        @for $column from 1 to $columns {
+            .o-grid__cell.\@#{$breakpoint}--#{$column} {
+                flex: 0 0 ((100% / $columns) * $column);
+            }
+        }
+    }
+}
+
+%no-gap {
+    padding: 0;
+}
+
+ul.o-grid,
+ol.o-grid {
+    list-style: none;
+}
