@@ -1,0 +1,57 @@
+.c-menu-trigger {
+    position: relative;
+    height: 16px;
+    width: 35px;
+    border: 0 solid transparent;
+    background: transparent;
+    cursor: pointer;
+    margin-bottom: 4px;
+
+    &:focus {
+        outline-color: $primary;
+    }
+
+    &__item {
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 4px;
+        border-radius: 100px;
+        display: block;
+        background: #000;
+        transition: all 0.3s ease-in-out;
+
+        &:nth-child(1) {
+            top: 0;
+            transform: rotate(0);
+        }
+
+        &:nth-child(2) {
+            top: 50%;
+            transform: rotate(0);
+        }
+
+        &:nth-child(3) {
+            top: 100%;
+            transform: rotate(0);
+        }
+    }
+
+    &.is-active {
+        .c-menu-trigger__item {
+            top: 50%;
+        }
+
+        .c-menu-trigger__item:nth-child(1) {
+            transform: rotate(45deg);
+        }
+
+        .c-menu-trigger__item:nth-child(2) {
+            transform: rotate(45deg);
+        }
+
+        .c-menu-trigger__item:nth-child(3) {
+            transform: rotate(-45deg);
+        }
+    }
+}

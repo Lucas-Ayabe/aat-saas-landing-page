@@ -7,9 +7,10 @@
     height: 80px;
     background: rgba(255, 255, 255, 0.8);
     z-index: 999;
+    transition: all 0.3s ease-in-out;
 
     &.is-active {
-        background: #fff;
+        background: rgba(255, 255, 255, 0.98);
         box-shadow: 0 4px 8px rgba(4, 12, 8, 0.2);
     }
 
@@ -25,11 +26,26 @@
         font-size: $subtitle;
         font-weight: 500;
         text-decoration: none;
-        flex: 1;
+        flex: 0 0 auto;
+        white-space: nowrap;
+    }
+
+    &__trigger {
+        display: none;
+        position: relative;
+        z-index: 6;
     }
 
     &__nav {
         justify-content: flex-end;
         flex: 5;
+    }
+}
+
+.js .c-header__trigger {
+    display: inline-block;
+
+    @include min-width(768px) {
+        display: none;
     }
 }
