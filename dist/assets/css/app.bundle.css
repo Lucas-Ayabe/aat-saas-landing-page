@@ -437,10 +437,13 @@ ol.o-grid {
 .c-banner {
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh; }
+  align-items: center; }
   .c-banner__content {
-    width: 100%; }
+    width: 100%;
+    margin-top: 80px; }
+    @media screen and (min-width: 768px) {
+      .c-banner__content {
+        margin-top: 0; } }
   .c-banner__title {
     text-align: center;
     font-weight: 500;
@@ -459,17 +462,18 @@ ol.o-grid {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: stretch; }
+    align-items: stretch;
+    min-height: 100vh; }
     @media screen and (min-width: 768px) {
       .c-banner.-bi-content {
         flex-direction: row; } }
   .c-banner.-bi-content .c-banner__content {
-    flex: 1 1 100vh;
+    flex: 1 1 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px; }
+    padding: 128px 20px; }
     @media screen and (min-width: 768px) {
       .c-banner.-bi-content .c-banner__content {
         padding: 0; } }
