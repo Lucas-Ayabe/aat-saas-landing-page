@@ -666,11 +666,14 @@ ol.o-grid {
   right: -100%;
   top: 0;
   bottom: 0;
-  width: 50%;
+  width: 100%;
   padding-top: 80px;
   padding-bottom: 80px; }
   .js .c-nav.is-active {
     right: 0; }
+  @media screen and (min-width: 600px) {
+    .js .c-nav {
+      width: 50%; } }
   @media screen and (min-width: 768px) {
     .js .c-nav {
       right: 0;
