@@ -33,11 +33,29 @@
         }
     }
 
-    &.is-active &__label {
+    &.is-active &__label,
+    &.is-success &__label,
+    &.is-danger &__label {
         font-size: $helper;
         color: $dark;
         top: -20px;
         left: 0;
         transform: translateY(0);
+    }
+
+    &.is-success &__label {
+        color: $success;
+    }
+
+    &.is-success &__input {
+        border-color: $success;
+    }
+
+    &.is-danger &__label {
+        color: $danger;
+    }
+
+    &.is-danger &__input {
+        border-color: $danger;
     }
 }

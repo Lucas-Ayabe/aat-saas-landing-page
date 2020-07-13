@@ -542,12 +542,22 @@ ol.o-grid {
       outline: none;
       box-shadow: 0 5px 10px rgba(4, 12, 8, 0.3);
       border-color: #51e898; }
-  .c-field.is-active .c-field__label {
+  .c-field.is-active .c-field__label,
+  .c-field.is-success .c-field__label,
+  .c-field.is-danger .c-field__label {
     font-size: 0.825rem;
     color: #040c08;
     top: -20px;
     left: 0;
     transform: translateY(0); }
+  .c-field.is-success .c-field__label {
+    color: #0bca0b; }
+  .c-field.is-success .c-field__input {
+    border-color: #0bca0b; }
+  .c-field.is-danger .c-field__label {
+    color: #c20b0b; }
+  .c-field.is-danger .c-field__input {
+    border-color: #c20b0b; }
 
 .c-footer {
   padding-top: 3rem;
